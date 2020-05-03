@@ -56,15 +56,15 @@ describe('it should be able to execute tasks ',()=>{
   });
   test('it should be able to run recursive functions',async ()=>{
     jest.setTimeout(1000*60);
-    const fib = (n): number=> n > 1 ? fib(n-1) + fib(n-2) : 1;
+    const fib = (n: number): number=> n > 1 ? fib(n-1) + fib(n-2) : 1;
     const res = await taskRunner.execute(fib, 10);
     expect(res).toBe(89);
   })
 
   test('it should finish multi heavy computational tasks faster',async ()=>{
-    const runFib2 = 50;
+    const runFib2 = 30;
     jest.setTimeout(1000*60 * 15);
-    const fib = (n): number=> n > 1 ? fib(n-1) + fib(n-2) : 1;
+    const fib = (n: number): number=> n > 1 ? fib(n-1) + fib(n-2) : 1;
     let startTime = process.hrtime();
     const res1 = fib(runFib2);
     const res2= fib(runFib2);

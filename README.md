@@ -3,6 +3,9 @@ ts worker pull
 A typescript lib for NODE for running multiply computational job in parlle with
 without blocking the main event loop thread 
 
+repo
+https://github.com/yonia1/ts-worker-poll
+
 install 
 
 ```
@@ -13,7 +16,7 @@ install
 Import the worker pull object and init it with the number of workers
 
 ```$xslt
-    import { WorkerPoll } from '../lib/worker-poll';
+    import { WorkerPoll } from 'ts-worker-pool';
     
     const taskRunner = new WorkerPoll(2);
 ```

@@ -8,7 +8,7 @@ export class JobFactory {
     return {
       id: uuidv4(),
       status: 'pending',
-      payload: payload,
+      payload,
       resolve: resolve as any,
       reject: reject as any,
 

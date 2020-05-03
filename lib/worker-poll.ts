@@ -5,7 +5,6 @@ import { JobFactory } from './job.factory';
 import { IWorkerPollWorker, Job, IWorkerPoll } from './types';
 
 
-
 export class WorkerPoll implements IWorkerPoll {
 
   private fixedWorkers: IWorkerPollWorker[] = [];
@@ -43,7 +42,7 @@ export class WorkerPoll implements IWorkerPoll {
 
   private handleWorkerResult(ev: MessageEvent, worker: IWorkerPollWorker) {
     const { status, result, id } = ev.data;
-    const idx: number = this.pendingJobs.findIndex((job) => job.id === id);
+    const idx: number = this.pendingJobs.findIndex((j) => j.id === id);
     const job: Job = this.pendingJobs[idx];
     worker.status = 'free';
     if (!job) return;
@@ -73,7 +72,7 @@ export class WorkerPoll implements IWorkerPoll {
   }
 
   async pauseAll():Promise<any> {
-
+    return null;
   }
 
   terminate(): Promise<number[]> {
@@ -93,7 +92,7 @@ export class WorkerPoll implements IWorkerPoll {
     if (this.pendingJobs.length === 0) return;
 
     const nextJob: Job | undefined = this.getNextPendingJob();
-    nextJob && this.moveJobToRunners(nextJob)
+    if(nextJob) this.moveJobToRunners(nextJob)
 
   }
 

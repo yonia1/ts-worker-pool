@@ -5,8 +5,10 @@
   "main": "index.ts",
   "author": "Yoni Amishav",
   "license": "MIT",
+  "repository": "https://www.npmjs.com/package/ts-worker-poll",
   "dependencies": {
     "@types/node": "^13.13.4",
+    "@types/uuid": "^7.0.3",
     "surrial": "^2.0.2",
     "uuid": "^8.0.0"
   },
@@ -19,18 +21,19 @@
     "ts-node": "^8.9.1",
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "uuid": "^8.0.0"
   },
   "scripts": {
     "test": "jest",
     "testwatch": "jest --watch",
-    "prepare" : "npm run build",
-    "prepublishOnly" : "npm test && npm run lint",
-    "preversion" : "npm run lint",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
-    "build" : "tsc",
-    "version" : "npm run format && git add -A src",
+    "build": "tsc",
+    "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tag"
   }
 }
