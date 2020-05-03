@@ -1,6 +1,6 @@
 {
   "name": "ts-worker-poll",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Thread poll for node using typescript",
   "main": "index.ts",
   "author": "Yoni Amishav",
