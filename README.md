@@ -1,6 +1,6 @@
 ts worker pull
 
-A typescript lib for NODE for running multiply computational job in parlle with
+A typescript lib for NODE for running multiply computational jobs in parallel
 without blocking the main event loop thread 
 
 repo
