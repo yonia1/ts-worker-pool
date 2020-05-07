@@ -1,6 +1,6 @@
 {
   "name": "ts-worker-poll",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "Thread poll for node using typescript",
   "main": "index.ts",
   "author": "Yoni Amishav",
@@ -13,9 +13,6 @@
     "uuid": "^8.0.0"
   },
   "main": "dist/index.js",
-  "files": [
-    "dist/worker.js"
-  ],
   "devDependencies": {
     "@types/jest": "^25.2.1",
     "jest": "^25.4.0",

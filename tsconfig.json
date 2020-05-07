@@ -7,7 +7,7 @@
     "strict": true,
     "esModuleInterop": true,
     "outDir": "dist",
-
+    "allowJs": true
   },
   "include": ["lib/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts","dist"]

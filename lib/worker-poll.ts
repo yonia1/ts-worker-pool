@@ -3,20 +3,20 @@ import { MessageChannel, Worker } from 'worker_threads';
 import { serialize, deserialize } from 'surrial';
 import { JobFactory } from './job.factory';
 import { IWorkerPollWorker, Job, IWorkerPoll } from './types';
-
-
+import {readFileSync} from 'fs';
+import * as path from 'path'
 export class WorkerPoll implements IWorkerPoll {
 
   private fixedWorkers: IWorkerPollWorker[] = [];
   private pendingJobs: Job[] = [];
   private isFixedWorker = false;
   constructor(readonly workersCount: number, fixedWorkFunction?: (... parms: any[]) => any) {
-
+    const workerFile = readFileSync(path.resolve(__dirname, "./worker.js"),{encoding: 'utf-8'})
     while (workersCount--) {
       const worker: IWorkerPollWorker = {
         id: this.workersCount -workersCount,
         status: 'free',
-        worker: new Worker('./lib/worker.js'),
+        worker: new Worker(workerFile.toString(),{eval: true}),
         channel: new MessageChannel() as MessageChannel,
         isFixedJob: false
       };
