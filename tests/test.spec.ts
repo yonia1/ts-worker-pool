@@ -1,4 +1,4 @@
-import { WorkerPoll } from '../lib/worker-poll';
+import { WorkerPoll } from '../dist/index';
 
 function parseHrtimeToSeconds(hrtime: any) {
   const seconds = (hrtime[0] + (hrtime[1] / 1e9)).toFixed(3);
